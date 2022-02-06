@@ -67,8 +67,8 @@ def splice_alternate(img1, img2, square=1):
     return img1
 
 
-img1_path = "/Users/rr/Desktop/code/digital_art/images/woods.jpg"
-img2_path = "/Users/rr/Desktop/code/digital_art/images/dumbo.jpg"
+img1_path = "/Users/robertreilly/code/digital_art/images/woods.jpg"
+img2_path = "/Users/robertreilly/code/digital_art/images/dumbo.jpg"
 
 # spliced = splice_images_vertically(
 #     img1=np.asarray(Image.open(img1_path)),
