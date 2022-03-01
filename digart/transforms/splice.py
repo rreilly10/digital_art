@@ -1,8 +1,9 @@
-import numpy as np
-import plotly.express as px
-from PIL import Image
-from datetime import datetime
 import math
+import os
+from datetime import datetime
+from digart.utils.utils import get_image_name_from_path
+import numpy as np
+from PIL import Image
 
 # datetime object containing current date and time
 now = datetime.now()
@@ -60,8 +61,6 @@ def splice_alternate(img1, img2, square=1):
             if (i + j) % 2 == 0:
                 # fmt: off
                 img1[i : i + square, j : j + square] = img2[i : i + square, j : j + square]
-                 
-    
     return img1
 
 def align_images(img1, img2):
@@ -90,10 +89,6 @@ def align_images(img1, img2):
     return img1, img2
 
 
-
-
-
-
 # spliced = splice_images_vertically(
 #     img1=np.asarray(Image.open(img1_path)),
 #     img2=np.asarray(Image.open(img2_path)),
@@ -110,7 +105,6 @@ def align_images(img1, img2):
 #     img1, square=15, alternate=True
 # )
 
-import os 
 
 def grid_search(dir):
     os.chdir(dir)
@@ -124,33 +118,16 @@ def grid_search(dir):
     return combs
 
 
-
-def get_image_name(img):
-    return img.split('/')[-1]
-
-
 def process_images(img1_path, img2_path, functions=[]):
     img1, img2 = align_images(np.asarray(Image.open(img1_path)), np.asarray(Image.open(img2_path)))
     
-    if img1.shape != img2.shape:
-        raise Exception(img1_path, img2_path)
-    
-    output_img = img1
-
     for func in functions:
-        output_img = func(output_img, img2, 1)
+        img1 = func(img1, img2, 1)
     
-    img = Image.fromarray(output_img)
-    os.makedirs(f'out/{now.strftime("%d-%m-%Y")}/{get_image_name(img1_path)}', exist_ok = True) 
+    img = Image.fromarray(img1)
+    os.makedirs(f'out/{now.strftime("%d-%m-%Y")}/{get_image_name_from_path(img1_path)}', exist_ok = True) 
     
-    img.save(f'out/{now.strftime("%d-%m-%Y")}/{get_image_name(img1_path)}/{get_image_name(img2_path)}.jpg', "JPEG")
+    img.save(f'out/{now.strftime("%d-%m-%Y")}/{get_image_name_from_path(img1_path)}/{get_image_name_from_path(img2_path)}.jpg', "JPEG")
     # img.show()
 
 
-if __name__ == "__main__":
-    for img1, img2 in grid_search('/Users/robertreilly/code/digital_art/images'):
-        process_images(
-           img1_path = img1,
-           img2_path = img2,
-           functions=[splice_alternate]
-        )  
