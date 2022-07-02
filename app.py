@@ -1,4 +1,5 @@
-from digart.transforms.splice import process_images, grid_search, splice_alternate
+from digart.transforms.splice import process_images, splice_alternate
+from digart.utils.utils import grid_search
 
 if __name__ == "__main__":
     # for img1, img2 in grid_search("/Users/robertreilly/code/digital_art/images"):
