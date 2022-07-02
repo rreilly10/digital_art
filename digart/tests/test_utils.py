@@ -30,4 +30,4 @@ def test_generate_test_images():
 
 
 def test_align_images():
-    
+    pass

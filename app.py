@@ -1,4 +1,4 @@
-from digart.transforms.splice import process_images, splice_alternate
+from digart.transforms.transforms import process_images, splice_alternate
 from digart.utils.utils import grid_search
 
 if __name__ == "__main__":
