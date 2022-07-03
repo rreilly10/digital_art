@@ -27,7 +27,6 @@ def splice_vertically(img1, img2, step=1):
 
     switch = True
     for i in range(0, len(img1[0]), step):
-        print(img1[::, i - step : i + step])
         if switch:
             img1[::, i : i + step] = img2[::, i : i + step]
         switch = not switch
