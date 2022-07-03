@@ -2,7 +2,7 @@
 out/*
 images/*
 .DS_Store
-.vscode/*
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -44,6 +44,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+cov_html
 htmlcov/
 .tox/
 .nox/
