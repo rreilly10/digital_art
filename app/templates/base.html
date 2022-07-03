@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <body>        
+        <form method="post" action="/">                
+            <div class="column">
+                <input type="text" name="image_name" value="{{ image.image_name }}"></input>    
+                <img src="{{image.image_path}}" style="width:100%">
+                <input type="submit" name="dislike" value="Dislike">
+                <input type="submit" name="maybe" value="Maybe">
+                <input type="submit" name="like" value="Like">
+            </div>
+        </form>
+    </body>
+</html>
