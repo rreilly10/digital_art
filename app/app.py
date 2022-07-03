@@ -40,13 +40,15 @@ def base():
         if "dislike" in request.form:
             img_name = request.form.get("image_name")
             DISLIKED.append(img_name)
-            IMAGES.remove(img_name)
+            if img_name in IMAGES:
+                IMAGES.remove(img_name)
         if "maybe" in request.form:
             pass
         if "like" in request.form:
             img_name = request.form.get("image_name")
             LIKED.append(img_name)
-            IMAGES.remove(img_name)
+            if img_name in IMAGES:
+                IMAGES.remove(img_name)
 
     print(f"Liked {LIKED}")
     print(f"DISLIKED {DISLIKED}")
