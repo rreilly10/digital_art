@@ -1,6 +1,9 @@
 import math
+import os
+from pathlib import Path
 from typing import Tuple
 
+import cv2
 import numpy as np
 
 
@@ -68,3 +71,29 @@ if __name__ == "__main__":
 
     assert np.array_equal(img1, img2)
     assert np.array_equal(img2, img1)
+
+
+def video_to_frames(video_path, name=None):
+    name = name or os.path.basename(video_path)
+    path = Path(video_path).parent
+
+    vidcap = cv2.VideoCapture(video_path)
+    success, image = vidcap.read()
+    count = 0
+
+    if not os.path.isdir(f"{path}/frames"):
+        os.makedirs(f"{path}/frames")
+
+    while success:
+        print(f'writing to {path}/frames/frame_{count}.jpg"')
+        cv2.imwrite(f"{path}/frames/frame_{count}.jpg", image)
+
+        success, image = vidcap.read()
+        print("Read a new frame: ", success)
+        count += 1
+
+
+if __name__ == "__main__":
+    video_to_frames(
+        "/Users/robertreilly/code/digital_art/assets/videos/ppl/ppl_zoom_out.MOV"
+    )
