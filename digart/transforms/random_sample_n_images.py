@@ -5,7 +5,7 @@ import copy
 
 from pytest import ExceptionInfo
 
-from process_pipeline.utils import utils
+from digart.utils import utils
 
 def get_random_sample(randoms):
     return randoms[random.randint(0, len(randoms) - 1)]

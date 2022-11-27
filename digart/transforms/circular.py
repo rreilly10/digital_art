@@ -27,7 +27,7 @@ if __name__ == "__main__":
     )
     img2 = np.asarray(img2)
 
-    from process_pipeline.utils import utils
+    from digart.utils import utils
 
     img1, img2 = utils.align_images(img1, img2)
 

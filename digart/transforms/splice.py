@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 
-def splice_alternate(img1, img2, square=1):
+def splice_alternate(img1: np.array, img2: np.array, square: int = 1) -> np.array:
     if img1.shape != img2.shape:
         raise Exception(
             f"img1: {img1.shape} img2: {img2.shape} do not match - unable to splice images"

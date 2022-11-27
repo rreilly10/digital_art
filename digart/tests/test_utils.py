@@ -1,4 +1,4 @@
-from process_pipeline.utils.utils import align_images
+from digart.utils.utils import align_images
 import numpy as np
 
 from pytest import fixture

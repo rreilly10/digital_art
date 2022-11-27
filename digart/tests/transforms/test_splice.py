@@ -1,4 +1,4 @@
-from process_pipeline.transforms.splice import (
+from digart.transforms.splice import (
     splice_alternate,
     splice_vertically,
     splice_horizontally,
