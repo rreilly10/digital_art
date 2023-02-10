@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <body>
+    <div class="column">
+      <form method="post" action="/dislike">
+        <input
+          type="hidden"
+          id="imageName"
+          name="imageName"
+          value="{{image.image_name}}"
+        />
+        <input
+          type="hidden"
+          id="imagePath"
+          name="imagePath"
+          value="{{image.image_path}}"
+        />
+        <input type="submit" name="dislike" value="Dislike" />
+      </form>
+
+      <form method="get" action="/">
+        <input type="submit" name="maybe" value="Maybe" />
+      </form>
+
+      <form method="post" action="/like">
+        <input
+          type="hidden"
+          id="imageName"
+          name="imageName"
+          value="{{image.image_name}}"
+        />
+        <input
+          type="hidden"
+          id="imagePath"
+          name="imagePath"
+          value="{{image.image_path}}"
+        />
+        <input type="submit" name="like" value="Like" />
+      </form>
+    </div>
+    <img
+      class="resize"
+      src="{{ url_for('download_file', filename=image.image_name) }}"
+    />
+  </body>
+</html>
