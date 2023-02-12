@@ -59,4 +59,22 @@ if __name__ == "__main__":
     image = transformer.apply_transforms(image)
 
     # show the image
-    image.show()
+    # image.show()
+
+    # Splice example
+
+    splice = SpliceAlternatingTransform()
+
+    image = Image.open(
+        "/Users/robertreilly/code/digital_art/assets/images/src/bkly_bridge.jpg"
+    )
+    image2 = Image.open(
+        "/Users/robertreilly/code/digital_art/assets/images/src/dumbo.jpg"
+    )
+
+    transformer = ImageTransformations()
+
+    transformer.add_transform(splice, target_image=image2, square_size=1)
+
+    img = transformer.apply_transforms(image=image)
+    img.show()
