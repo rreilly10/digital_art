@@ -1,5 +1,5 @@
 import numpy as np
-from digart.transforms.pixelate import pixelate
+from pipeline.transforms.pixelate import pixelate
 
 
 def test_pixelate_with_square_2():
