@@ -1,7 +1,6 @@
-from digart.utils.utils import align_images
 import numpy as np
 
-from pytest import fixture
+from pipeline.utils.utils import align_images
 
 
 def test_align_identical_images():
