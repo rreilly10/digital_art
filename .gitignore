@@ -4,6 +4,7 @@ assets/*
 images/*
 .DS_Store
 .vscode
+post_queue.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

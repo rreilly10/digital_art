@@ -1,3 +1,4 @@
+anthropic>=0.39.0
 attrs==21.4.0
 black==22.1.0
 boto3==1.24.22
@@ -32,6 +33,8 @@ pluggy==1.0.0
 plum-py==0.8.5
 py==1.11.0
 pyparsing==3.0.7
+python-dotenv>=1.0.0
+pytz>=2023.3
 pytest==7.0.1
 pytest-cov==3.0.0
 python-dateutil==2.8.2
