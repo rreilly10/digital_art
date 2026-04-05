@@ -1,4 +1,4 @@
-# Viper LLC — IP Firm Brief
+# Biperion LLC — IP Firm Brief
 
 ## Concept
 An intellectual property firm that identifies future technology trends, builds patentable implementations around them, and sells/licenses the IP to companies.
@@ -10,7 +10,7 @@ An intellectual property firm that identifies future technology trends, builds p
 - Proactively license or sell to companies who need the IP
 
 ## Startup Requirements
-- **Legal:** Patent attorney ($8-15K per filing), LLC already exists (Viper LLC)
+- **Legal:** Patent attorney ($8-15K per filing), LLC already exists (Biperion LLC)
 - **Domain:** Pick one area of deep expertise to focus on
 - **Budget:** ~$150K+ to build a meaningful portfolio (10-20 patents at $15-30K each through prosecution)
 - **Timeline:** 2-5 years to revenue
